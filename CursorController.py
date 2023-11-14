@@ -24,6 +24,7 @@ detector = HTM.handDetector(mode=False, maxHands=2, detectionCon=0.7, trackCon=0
 
 while True:
     success, img = cap.read()
+    img = cv2.flip(img, 1)
     img = detector.findHands(img)
     lmList = detector.findPosition(img, draw=False)
 
